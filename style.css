@@ -77,6 +77,7 @@ a:link {
     border-radius: 5px;
     background: #d3d3d3;
     outline: none;
+    border: 0px;
 }
 
 .slider::-webkit-slider-thumb {
@@ -89,6 +90,8 @@ a:link {
     top: -6px;
     background: #51Ae59;
     cursor: pointer;
+    outline: none;
+    border: 0px;
 }
   
 .slider::-moz-range-thumb {
@@ -96,6 +99,8 @@ a:link {
     height: 25px;
     border-radius: 50%;
     background: #51Ae59;
+    outline: none;
+    border: 0px;
     cursor: pointer;
 }
 
