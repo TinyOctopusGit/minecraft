@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Stats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Server Status</h1>
+
+
+    <div class="desktop">
+        <button class="button" style="position: fixed; right: 10px; top: 10px;"><a href="url">Purchase Upgrade</a></button>
+    </div>
+    <div class="mobile">
+    <button class="button"><a href="url">Purchase Upgrade</a></button>
+    </div>
+
+    <h2>Pricing</h2>
+
+    <p style="width: 80%; margin: auto;">
+        
+    </p>
+    <div class="sliders">
+        <label for="tempB"><h3>Current GB:</h3></label>
+        <input type="range" id="gb" name="gb" list="values" step="1" min="0" max="8" class="slider" value="0"/>
+        
+        <datalist id="values">
+        <option value="0" label="3" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="1" label="4" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="2" label="5" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="3" label="6" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="4" label="7" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="5" label="8" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="6" label="10" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="7" label="12" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="8" label="16" style="-webkit-transform: rotate(-90deg);"></option>
+        </datalist>
+        <p>Cost of Upgrade: $<span id="gbPrice"></span></p>
+        <h3><p>Current Threads: <span id="threads"></span></p></h3>
+
+        <button onclick="reset()" style="font-size: small;">Reset to Current</button>
+
+        <br><br>
+
+        <details>
+            <summary>
+                About Pricing
+              <span class="icon">?</span>
+            </summary>
+            <p>
+                The slider above doubles as a display for the current amount of RAM and threads that the server has along with a price calculator. Additional threads can be purchased for about $5 but the price is dependant on the amount of RAM. Also for every 2 GB of RAM an extra thread is added for free which is why there isn't an option to calculate the extra thread cost.
+            </p>
+          </details>
+    </div>
+
+    <br>
+    <h2><u>Potential Website Upgrades</u></h2>
+    <h3>Dynmap</h3>
+    <p>A interactive map of the current minecraft world with player positions as well as other things.</p>
+    <img src="https://media.forgecdn.net/avatars/72/913/636163473381942296.png" width="50%">
+    <h3>Server Metrics</h3>
+    <p>A dashboard of the live server cpu, memory, network, and storage usage. Also current players and server status.</p>
+    <p>Not sure this one will be implemented because of security. A discord bot might be used instead.</p>
+    <img src="https://pebblehost.com/img/panel/ark_1.png" width="50%">
+
+</body>
+
+<script>
+    var currentGB = 0;
+    var slider = document.getElementById("gb");
+    var output = document.getElementById("gbPrice");
+    var output2 = document.getElementById("threads");
+    var sliderVal;
+
+    output.innerHTML = currentGB;
+    output2.innerHTML = 1;
+
+    slider.oninput = function() {
+    if (slider.value > 5) {
+        if (slider.value == 6) {
+            sliderVal = 7;
+        }
+        if (slider.value == 7) {
+            sliderVal = 9;
+        }
+        if (slider.value == 8) {
+            sliderVal = 13;
+        }
+    } else {
+        sliderVal = slider.value;
+    }
+    if (slider.value == 0) {
+        output2.innerHTML = 1;
+    }
+    if (slider.value == 1 || slider.value == 2) {
+        output2.innerHTML = 2;
+    }
+    if (slider.value == 3 || slider.value == 4) {
+        output2.innerHTML = 3;
+    }
+    if (slider.value == 5 || slider.value == 6) {
+        output2.innerHTML = 4;
+    }
+    if (slider.value == 7 || slider.value == 8) {
+        output2.innerHTML = 5;
+    }
+
+    output.innerHTML = ((sliderVal - currentGB)*2.25);
+    }
+
+    function reset() {
+        document.getElementById('gb').value = currentGB;
+        output.innerHTML = 0;
+        output2.innerHTML = 1;
+    }
+</script>
+
+</html>

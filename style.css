@@ -1,0 +1,146 @@
+body{
+    color: #51Ae59;
+    background-color: #191516;
+    background: linear-gradient(180deg, rgb(0, 16, 5) 90%, rgba(14,66,19,1) 100%);
+    font-family: sans-serif;
+    text-align: center;
+    
+}
+
+h1 {
+    font-size: 400%;
+}
+
+button {
+    border-radius: 1000px;
+    border: solid #48984e 2px;
+    background-color: rgba(8,38,11,1);
+    color: white;
+    padding: 10px;
+    transition: 100ms;
+}
+
+button:hover {
+    background-color: rgb(14, 59, 19);
+}
+
+.button {
+    border-radius: 1000px;
+    border: solid #48984e 5px;
+    background-color: #48984e;
+    color: white;
+    padding: 10px;
+    transition: 100ms;
+}
+
+.button:hover{
+    border: solid #3b7b41 10px;
+    background-color: #3b7b41;
+}
+
+a:link {
+    color: #d3d3d3;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: large;
+}
+
+.desktop {
+    display: block;
+}
+.mobile {
+    display: none;
+    margin: block;
+}
+
+@media only screen and (max-width: 800px) {
+    .desktop {
+      display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    .sliders{
+        width: 100%;
+    }
+}
+
+.sliders{
+    margin: auto;
+    width: 70%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    top: -6px;
+    background: #51Ae59;
+    cursor: pointer;
+}
+  
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #51Ae59;
+    cursor: pointer;
+}
+
+datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 100%;
+    
+}
+  
+option {
+    padding: 0;
+}
+  
+input[type="range"] {
+    width: 100%;
+    margin: 0;
+    color: grey
+}
+
+details {
+    user-select: none;
+    width: 80%;
+    margin: auto;
+  }
+  
+  details>summary span.icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+    margin-left: auto;
+    transform: rotate(0deg);
+  }
+  
+  details[open] summary span.icon {
+    transform: rotate(180deg);
+  }
+  
+  summary {
+    display: flex;
+    cursor: pointer;
+  }
+  
+  summary::-webkit-details-marker {
+    display: none;
+  }
