@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server</title>
+    <link rel="icon" type="image/x-icon" href="GrassNew.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link"class="active">Purchase Upgrade</a>
+        <a href="index.html">Home</a>
+        <a href="server.html">Server Details</a>
+        <!-- <a href="dynmap.html">Dynmap</a> -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      
+    <h1>Server Details</h1>
+
+    <h2>Status</h2>
+    <p>Offline</p>
+    <p>Players: 0</p>
+
+    <!-- <div class="desktop">
+        <button class="button" style="position: fixed; right: 10px; top: 10px;"><a href="url">Purchase Upgrade</a></button>
+    </div>
+    <div class="mobile">
+    <button class="button"><a href="url">Purchase Upgrade</a></button>
+    </div> -->
+
+    <h2>Server Hardware</h2>
+    <p>CPU: Ryzen 7 5800X @ 4.7GHz</p>
+    <p>Storage: Unmetered Enterprise Grade NVMe SSDs</p>
+    <p>RAM: DDR4 2666MHz Memory</p>
+
+    <p style="width: 80%; margin: auto;">
+        
+    </p>
+    <div class="sliders">
+        <label for="tempB"><h3>Current GB of RAM:</h3></label>
+        <input type="range" id="gb" name="gb" list="values" step="1" min="0" max="8" class="slider" value="0"/>
+        
+        <datalist id="values">
+        <option value="0" label="3" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="1" label="4" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="2" label="5" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="3" label="6" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="4" label="7" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="5" label="8" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="6" label="10" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="7" label="12" style="-webkit-transform: rotate(-90deg);"></option>
+        <option value="8" label="16" style="-webkit-transform: rotate(-90deg);"></option>
+        </datalist>
+        <p>Cost of Upgrade: $<span id="gbPrice"></span></p>
+        <h3><p>Current CPU Threads: <span id="threads"></span></p></h3>
+
+        <button onclick="reset()" style="font-size: small;">Reset to Current</button>
+
+        <br><br>
+
+        <details>
+            <summary>
+                About Pricing
+              <span class="icon">?</span>
+            </summary>
+            <p>
+                The slider above doubles as a display for the current amount of RAM and threads that the server has along with a price calculator. Additional threads can be purchased for about $5 but the price is dependant on the amount of RAM. Also for every 2 GB of RAM an extra thread is added for free which is why there isn't an option to calculate the extra thread cost.
+            </p>
+          </details>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+
+<script>
+    var currentGB = 0;
+    var slider = document.getElementById("gb");
+    var output = document.getElementById("gbPrice");
+    var output2 = document.getElementById("threads");
+    var sliderVal;
+
+    output.innerHTML = currentGB;
+    output2.innerHTML = 1;
+
+    slider.oninput = function() {
+    if (slider.value > 5) {
+        if (slider.value == 6) {
+            sliderVal = 7;
+        }
+        if (slider.value == 7) {
+            sliderVal = 9;
+        }
+        if (slider.value == 8) {
+            sliderVal = 13;
+        }
+    } else {
+        sliderVal = slider.value;
+    }
+    if (slider.value == 0) {
+        output2.innerHTML = 1;
+    }
+    if (slider.value == 1 || slider.value == 2) {
+        output2.innerHTML = 2;
+    }
+    if (slider.value == 3 || slider.value == 4) {
+        output2.innerHTML = 3;
+    }
+    if (slider.value == 5 || slider.value == 6) {
+        output2.innerHTML = 4;
+    }
+    if (slider.value == 7 || slider.value == 8) {
+        output2.innerHTML = 5;
+    }
+
+    output.innerHTML = ((sliderVal - currentGB)*2.25);
+    }
+
+    function reset() {
+        document.getElementById('gb').value = currentGB;
+        output.innerHTML = 0;
+        output2.innerHTML = 1;
+    }
+
+    function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</html>
