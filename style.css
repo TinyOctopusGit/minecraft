@@ -4,7 +4,8 @@ body{
     background: linear-gradient(180deg, rgb(0, 16, 5) 90%, rgba(14,66,19,1) 100%);
     font-family: sans-serif;
     text-align: center;
-    
+    margin: 0px;
+    padding: 0px;
 }
 
 h1 {
@@ -17,7 +18,7 @@ button {
     background-color: rgba(8,38,11,1);
     color: white;
     padding: 10px;
-    transition: 100ms;
+    transition: 200ms;
 }
 
 button:hover {
@@ -26,43 +27,25 @@ button:hover {
 
 .button {
     border-radius: 1000px;
-    border: solid #48984e 5px;
-    background-color: #48984e;
-    color: white;
+    background-color: #528e57;
+    border: 0px;
+    color: #000000;
     padding: 10px;
-    transition: 100ms;
+    transition: 200ms;
+    text-shadow:  0 0 30px #3b8b49, 0 0 40px #89dc98, 0 0 50px #89dc98, 0 0 80px #89dc98, 0 0 100px #89dc98;
 }
 
 .button:hover{
-    border: solid #3b7b41 10px;
-    background-color: #3b7b41;
+    background-color: #759b78;
+    text-shadow:  0 0 30px #00e62a, 0 0 40px #00e62a, 0 0 50px #00e62a, 0 0 60px #00e62a, 0 0 70px #00e62a;
+
 }
 
 a:link {
     color: #d3d3d3;
     background-color: transparent;
     text-decoration: none;
-    font-size: large;
-}
-
-.desktop {
-    display: block;
-}
-.mobile {
-    display: none;
-    margin: block;
-}
-
-@media only screen and (max-width: 800px) {
-    .desktop {
-      display: none;
-    }
-    .mobile {
-        display: block;
-    }
-    .sliders{
-        width: 100%;
-    }
+    font-size: xx-large;
 }
 
 .sliders{
@@ -77,7 +60,6 @@ a:link {
     border-radius: 5px;
     background: #d3d3d3;
     outline: none;
-    border: 0px;
 }
 
 .slider::-webkit-slider-thumb {
@@ -90,7 +72,6 @@ a:link {
     top: -6px;
     background: #51Ae59;
     cursor: pointer;
-    outline: none;
     border: 0px;
 }
   
@@ -99,9 +80,9 @@ a:link {
     height: 25px;
     border-radius: 50%;
     background: #51Ae59;
-    outline: none;
-    border: 0px;
     cursor: pointer;
+    border: 0px;
+
 }
 
 datalist {
@@ -148,4 +129,98 @@ details {
   
   summary::-webkit-details-marker {
     display: none;
+}
+.topnav {
+    overflow: hidden;
+    background: linear-gradient(0deg, rgba(0, 16, 5, 0) 0%, rgba(14,66,19,1) 80%);;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    margin: 0px;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    margin: 5px;
+    padding: 10px 12px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 1000px;
+    transition: 200ms;
+    border: solid transparent 3px;
+}
+
+.topnav a:hover {
+    /* background-color: transparent; */
+    border: solid #48984e 3px;
+    color: white;
+    background-color: radial-gradient(circle, rgba(0,0,0,0) 10%, rgba(14,66,19,1) 100%);
+}
+
+.topnav a.active {
+    background-color: #48984e;
+    color: white;
+    transition: 200ms;
+    border: solid transparent 3px;
+}
+
+.topnav a.active:hover {
+    background-color: #3c7e42;
+    border: solid transparent 3px;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+.topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+.column {
+    float: left;
+    width: 40%;
+    padding: 5%;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 90%;
+    }
+  }
+
+  .glow {
+    font-size: 80px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00e62a, 0 0 40px #00e62a, 0 0 50px #00e62a, 0 0 60px #00e62a, 0 0 70px #00e62a;
   }
