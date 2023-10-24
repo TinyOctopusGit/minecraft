@@ -3,68 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Server Stats</title>
+    <title>Server</title>
+    <link rel="icon" type="image/x-icon" href="GrassNew.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <h1>Server Status</h1>
-
-
-    <div class="desktop">
-        <button class="button" style="position: fixed; right: 10px; top: 10px;"><a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link">Purchase Upgrade</a></button>
-    </div>
-    <div class="mobile">
-    <button class="button"><a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link">Purchase Upgrade</a></button>
-    </div>
-
-    <h2>Pricing</h2>
-
-    <p style="width: 80%; margin: auto;">
-        
-    </p>
-    <div class="sliders">
-        <label for="tempB"><h3>Current RAM GB:</h3></label>
-        <input type="range" id="gb" name="gb" list="values" step="1" min="0" max="8" class="slider" value="0"/>
-        
-        <datalist id="values">
-        <option value="0" label="3" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="1" label="4" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="2" label="5" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="3" label="6" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="4" label="7" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="5" label="8" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="6" label="10" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="7" label="12" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="8" label="16" style="-webkit-transform: rotate(-90deg);"></option>
-        </datalist>
-        <p>Cost of Upgrade: $<span id="gbPrice"></span></p>
-        <h3><p>Current Threads: <span id="threads"></span></p></h3>
-
-        <button onclick="reset()" style="font-size: small;">Reset to Current</button>
-
-        <br><br>
-
-        <details>
-            <summary>
-                About Pricing
-              <span class="icon">?</span>
-            </summary>
-            <p>
-                The slider above doubles as a display for the current amount of RAM and threads that the server has along with a price calculator. Additional threads can be purchased for about $5 but the price is dependant on the amount of RAM. Also for every 2 GB of RAM an extra thread is added for free which is why there isn't an option to calculate the extra thread cost.
-            </p>
-          </details>
-    </div>
-
+    <div class="topnav" id="myTopnav">
+        <a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link"class="active">Purchase Upgrade</a>
+        <a href="index.html">Home</a>
+        <a href="server.html">Server Details</a>
+        <!-- <a href="dynmap.html">Dynmap</a> -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      
     <br>
-    <h2><u>Potential Website Upgrades</u></h2>
-    <h3>Dynmap</h3>
-    <p>A interactive map of the current minecraft world with player positions as well as other things.</p>
-    <img src="https://media.forgecdn.net/avatars/72/913/636163473381942296.png" width="50%">
-    <h3>Server Metrics</h3>
-    <p>A dashboard of the live server cpu, memory, network, and storage usage. Also current players and server status.</p>
-    <p>Not sure this one will be implemented because of security. A discord bot might be used instead.</p>
-    <img src="https://pebblehost.com/img/panel/ark_1.png" width="50%">
+    <br>
+    <h2>Server Starting Soon!</h2>
+
+    <h1 id="timer" class="glow"></h1>
+
+
+    <h3>Experiencing Lag? Upgrade the server.</h3>
+    <button class="button"><a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link">Upgrade!</a></button>
+    <div class="row">
+        <div class="column">
+          <h2>About the Server</h2>
+          <p>This server is player-funded! The goal is to have this server run indefinitely which is why there is a free base server with 3gb of RAM and 1 CPU thread. If players experience lag then the idea would be for them to upgrade the server when they feel it necessary.</p>
+        </div>
+        <div class="column">
+          <h2>Need Help?</h2>
+          <p>Ask any questions you have in the discord.</p>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
 
 </body>
 
@@ -116,6 +92,46 @@
         output.innerHTML = 0;
         output2.innerHTML = 1;
     }
+
+    function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
 </script>
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Oct 27, 2023 12:00:00").getTime();
+    document.getElementById("timer").innerHTML = "00:00:00"  
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+        
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+        
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+      // Output the result in an element with id="demo"
+      document.getElementById("timer").innerHTML = days + ":" + hours + ":"
+      + minutes + ":" + seconds;
+        
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "Server Started";
+      }
+    }, 1000);
+    </script>
 
 </html>
