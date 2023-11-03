@@ -11,7 +11,7 @@
 
 <body>
     <div class="topnav" id="myTopnav">
-        <a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link"class="active">Purchase Upgrade</a>
+        <a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link"class="active">Upgrade</a>
         <a href="index.html">Home</a>
         <a href="server.html">Server Details</a>
         <!-- <a href="dynmap.html">Dynmap</a> -->
@@ -19,20 +19,18 @@
           <i class="fa fa-bars"></i>
         </a>
       </div>
-      
+    
     <br>
     <br>
-    <h2>Server Starting Soon!</h2>
 
-    <h1 id="timer" class="glow"></h1>
-
+    <img src="Minecraft_Logo_Test_2_2.png" alt="PogCraft">
 
     <h3>Experiencing Lag? Upgrade the server.</h3>
     <button class="button"><a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link">Upgrade!</a></button>
     <div class="row">
         <div class="column">
           <h2>About the Server</h2>
-          <p>This server is player-funded! The goal is to have this server run indefinitely which is why there is a free base server with 3gb of RAM and 1 CPU thread. If players experience lag then the idea would be for them to upgrade the server when they feel it necessary.</p>
+          <p>This server is player funded! The goal is to have this server run indefinitely which is why there is a free base server of 3gb or ram and 1 thread. If players experience lag then the idea would be for them to upgrade the server when they feel it necessary.</p>
         </div>
         <div class="column">
           <h2>Need Help?</h2>
@@ -102,36 +100,5 @@
   }
 }
 </script>
-<script>
-    // Set the date we're counting down to
-    var countDownDate = new Date("Oct 27, 2023 12:00:00").getTime();
-    document.getElementById("timer").innerHTML = "00:00:00"  
-
-    // Update the count down every 1 second
-    var x = setInterval(function() {
-    
-      // Get today's date and time
-      var now = new Date().getTime();
-        
-      // Find the distance between now and the count down date
-      var distance = countDownDate - now;
-        
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-      // Output the result in an element with id="demo"
-      document.getElementById("timer").innerHTML = days + ":" + hours + ":"
-      + minutes + ":" + seconds;
-        
-      // If the count down is over, write some text 
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("timer").innerHTML = "Server Started";
-      }
-    }, 1000);
-    </script>
 
 </html>
