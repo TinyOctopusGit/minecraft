@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Server PogCraft</title>
+    <title>Server Details</title>
     <link rel="icon" type="image/x-icon" href="Minecraft_Logo_Test_2_2.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,7 +11,7 @@
 
 <body>
     <div class="topnav" id="myTopnav">
-        <a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link"class="active">Purchase Upgrade</a>
+        <a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link"class="active">Upgrade</a>
         <a href="index.html">Home</a>
         <a href="server.html">Server Details</a>
         <!-- <a href="dynmap.html">Dynmap</a> -->
@@ -20,26 +20,24 @@
         </a>
       </div>
     <br><br>
-      
+    <br><br>
+    
     <h1>Server Details</h1>
 
-    <h2>Status</h2>
-    <p>Offline</p>
-    <p>Players: 0</p>
-
-    <!-- <div class="desktop">
-        <button class="button" style="position: fixed; right: 10px; top: 10px;"><a href="url">Purchase Upgrade</a></button>
+    <div class="serverStatus">
+        <h2>Status</h2>       
+        <p> Server is: <span id="server-status" style="font-weight: bold;">0</span></p>
+        <p> Players Online: <span id="player-count" style="font-weight: bold;">0</span>/<span id="player-max" style="font-weight: bold;">0</span></p>
+        <p> Server Version: <span id="server-name" style="font-weight: bold;">0</span></p>
     </div>
-    <div class="mobile">
-    <button class="button"><a href="url">Purchase Upgrade</a></button>
-    </div> -->
 
     <h2>Server Hardware</h2>
     <p>CPU: Ryzen 7 5800X @ 4.7GHz</p>
     <p>Storage: Unmetered Enterprise Grade NVMe SSDs</p>
     <p>RAM: DDR4 2666MHz Memory</p>
+    <i>Hosted by Pebblehost</i>
 
-    <p style="width: 80%; margin: auto;">
+    <p style="width: 80%; margin: aut o;">
         
     </p>
     <div class="sliders">
@@ -60,7 +58,7 @@
         <p>Cost of Upgrade: $<span id="gbPrice"></span></p>
         <h3><p>Current CPU Threads: <span id="threads"></span></p></h3>
 
-        <button onclick="reset()" style="font-size: small;">Reset to Current</button>
+        <button class="button" onclick="reset()" style="font-size: small;">Reset to Current</button>
 
         <br><br>
 
@@ -70,20 +68,12 @@
               <span class="icon">?</span>
             </summary>
             <p>
-                The slider above doubles as a display for the current amount of RAM and threads that the server has along with a price calculator. Additional threads can be purchased for about $5 but the price is dependant on the amount of RAM. Also for every 2 GB of RAM an extra thread is added for free which is why there isn't an option to calculate the extra thread cost.
+                The slider above doubles as a display for the current amount of RAM and threads that the server has along with a price calculator. Additional threads can be purchased for about $5 but the price is dependant on the amount of RAM. Also for every 2 GB of RAM an extra thread is added for free which is why there isn't an option to calculate the extra thread cost since threads are added with the RAM.
             </p>
           </details>
     </div>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br>    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-
+    <br><br><br><br><br><br><br><br><br><br><br><br>
 
 </body>
 
@@ -145,5 +135,54 @@
   }
 }
 </script>
+<!-- <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
+<script>
+    MinecraftAPI.getServerStatus('play.pogcraft.net', {
+        port: 25565 // optional, only if you need a custom port
+    }, function (err, status) {
+        if (err) {
+            return document.querySelector('.server-status').innerHTML = 'Error loading status';
+        }
+
+        // you can change these to your own message!
+        document.querySelector('.server-online').innerHTML = status.online ? 'Online' : 'Offline';
+    });
+</script> -->
+
+<script>
+    function initServerData(serverIp,serverPort){    
+        fetch('https://mcapi.us/server/status?ip='+serverIp+'&port='+serverPort)
+        .then(response => response.json())
+        .then(data => handleServerStatus(data));
+    
+        function handleServerStatus(data){
+            if(data.status=='error'){
+                console.log(data.error);
+                return false;
+            }
+
+            const serverStatus = document.getElementById("server-status");
+            if (data.online) {
+                serverStatus.innerHTML = "Online";
+            }   
+            else {
+                serverStatus.innerHTML = "Offline";
+            }
+            
+    
+            const motd = document.getElementById("player-max");
+            motd.innerHTML = data.players.max;
+    
+            const playerCounter = document.getElementById("player-count");
+            playerCounter.innerHTML = data.players.now;
+
+            const serverName = document.getElementById("server-name");
+            serverName.innerHTML = data.server.name;
+        } 
+    }
+    
+    initServerData("play.pogcraft.net","25565");
+    
+    </script>
 
 </html>
