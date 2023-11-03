@@ -26,7 +26,7 @@
     <img src="Minecraft_Logo_Test_2_2.png" style="width: 50%;" alt="PogCraft">
 
     <h3>Experiencing Lag? Upgrade the server.</h3>
-    <button class="button"><a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link">Upgrade!</a></button>
+    <button class="button" style="font-family: nunito;" onclick='window.open("https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link")'>Upgrade</button>
     <div class="row">
         <div class="column">
           <h2>About the Server</h2>
@@ -43,54 +43,6 @@
 </body>
 
 <script>
-    var currentGB = 0;
-    var slider = document.getElementById("gb");
-    var output = document.getElementById("gbPrice");
-    var output2 = document.getElementById("threads");
-    var sliderVal;
-
-    output.innerHTML = currentGB;
-    output2.innerHTML = 1;
-
-    slider.oninput = function() {
-    if (slider.value > 5) {
-        if (slider.value == 6) {
-            sliderVal = 7;
-        }
-        if (slider.value == 7) {
-            sliderVal = 9;
-        }
-        if (slider.value == 8) {
-            sliderVal = 13;
-        }
-    } else {
-        sliderVal = slider.value;
-    }
-    if (slider.value == 0) {
-        output2.innerHTML = 1;
-    }
-    if (slider.value == 1 || slider.value == 2) {
-        output2.innerHTML = 2;
-    }
-    if (slider.value == 3 || slider.value == 4) {
-        output2.innerHTML = 3;
-    }
-    if (slider.value == 5 || slider.value == 6) {
-        output2.innerHTML = 4;
-    }
-    if (slider.value == 7 || slider.value == 8) {
-        output2.innerHTML = 5;
-    }
-
-    output.innerHTML = ((sliderVal - currentGB)*2.25);
-    }
-
-    function reset() {
-        document.getElementById('gb').value = currentGB;
-        output.innerHTML = 0;
-        output2.innerHTML = 1;
-    }
-
     function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
