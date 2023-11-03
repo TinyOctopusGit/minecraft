@@ -1,8 +1,18 @@
+:root {
+    --bg: #fff3d8;
+    --orange: #ffaa00;
+    --accent: #ff6f00;
+    --aHover: #f05800;
+}
+@font-face { 
+    font-family: "nunito";
+    src: url(Nunito.ttf); 
+} 
+
 body{
-    color: #51Ae59;
-    background-color: #191516;
-    background: linear-gradient(180deg, rgb(0, 16, 5) 90%, rgba(14,66,19,1) 100%);
-    font-family: sans-serif;
+    color: #000000;
+    background-color: var(--bg);
+    font-family: nunito;
     text-align: center;
     margin: 0px;
     padding: 0px;
@@ -11,38 +21,41 @@ body{
 h1 {
     font-size: 400%;
 }
-
-button {
-    border-radius: 1000px;
-    border: solid #48984e 2px;
-    background-color: rgba(8,38,11,1);
-    color: white;
-    padding: 10px;
-    transition: 200ms;
+h2 {
+    font-size: 200%;
 }
 
-button:hover {
-    background-color: rgb(14, 59, 19);
+.serverStatus p{
+    font-size: larger;
 }
 
 .button {
-    border-radius: 1000px;
-    background-color: #528e57;
-    border: 0px;
-    color: #000000;
-    padding: 10px;
-    transition: 200ms;
-    text-shadow:  0 0 30px #3b8b49, 0 0 40px #89dc98, 0 0 50px #89dc98, 0 0 80px #89dc98, 0 0 100px #89dc98;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: 100ms;
+}
+  
+.button:hover {background-color: var(--aHover)}
+  
+.button:active {
+    background-color: var(--aHover);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
-.button:hover{
-    background-color: #759b78;
-    text-shadow:  0 0 30px #00e62a, 0 0 40px #00e62a, 0 0 50px #00e62a, 0 0 60px #00e62a, 0 0 70px #00e62a;
 
-}
-
-a:link {
-    color: #d3d3d3;
+a:link, a:visited {
+    color: var(--bg);
     background-color: transparent;
     text-decoration: none;
     font-size: xx-large;
@@ -70,16 +83,30 @@ a:link {
     border-radius: 50%;
     position: relative;
     top: -6px;
-    background: #51Ae59;
+    background: var(--orange);
+    cursor: pointer;
+    border: 0px;
+    transition: 100ms;
+}
+
+.slider::-webkit-slider-thumb:hover{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    top: -6px;
+    background: var(--accent);
     cursor: pointer;
     border: 0px;
 }
-  
+
 .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #51Ae59;
+    background: var(--orange);
     cursor: pointer;
     border: 0px;
 
@@ -132,11 +159,12 @@ details {
 }
 .topnav {
     overflow: hidden;
-    background: linear-gradient(0deg, rgba(0, 16, 5, 0) 0%, rgba(14,66,19,1) 80%);;
+    background: var(--orange);
     position: fixed;
     width: 100%;
     top: 0px;
     margin: 0px;
+    margin-bottom: 5px;
 }
 
 .topnav a {
@@ -150,26 +178,23 @@ details {
     font-size: 17px;
     border-radius: 1000px;
     transition: 200ms;
-    border: solid transparent 3px;
 }
 
 .topnav a:hover {
-    /* background-color: transparent; */
-    border: solid #48984e 3px;
     color: white;
-    background-color: radial-gradient(circle, rgba(0,0,0,0) 10%, rgba(14,66,19,1) 100%);
+    background-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 3px #979797;
 }
 
 .topnav a.active {
-    background-color: #48984e;
+    background-color: var(--accent);
     color: white;
     transition: 200ms;
-    border: solid transparent 3px;
 }
 
 .topnav a.active:hover {
-    background-color: #3c7e42;
-    border: solid transparent 3px;
+    background-color: var(--accent);
 }
 
 .topnav .icon {
