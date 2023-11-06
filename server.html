@@ -26,10 +26,18 @@
 
     <div class="serverStatus">
         <h2>Status</h2>       
-        <p> Server is: <span id="server-status" style="font-weight: bold;">0</span></p>
+        <p> Server is: <span id="server-status" style="font-weight: bold;"></span></p>
         <p> Players Online: <span id="player-count" style="font-weight: bold;">0</span>/<span id="player-max" style="font-weight: bold;">0</span></p>
-        <p> Server Version: <span id="server-name" style="font-weight: bold;">0</span></p>
+        <p> Server Version: <span id="server-version" style="font-weight: bold;">0</span></p>
         <h2>Mods and Datapacks</h2>
+        <h3>Fabric Mods</h3>
+        <p>Dynmap</p>
+        <p>Lithium</p>
+        <p>Sodium</p>
+        <h3>DataPacks</h3>
+        <p>Player Shops</p>
+        <p>Vanilla Tweaks</p>
+
 
     </div>
 
@@ -151,7 +159,7 @@
     });
 </script> -->
 
-<script>
+<!-- <script>
     function initServerData(serverIp,serverPort){    
         fetch('https://mcapi.us/server/status?ip='+serverIp+'&port='+serverPort)
         .then(response => response.json())
@@ -180,6 +188,42 @@
 
             const serverName = document.getElementById("server-name");
             serverName.innerHTML = data.server.name;
+        } 
+    }
+    
+    initServerData("play.pogcraft.net","25565");
+    
+</script> -->
+
+<script>
+    function initServerData(serverIp,serverPort){    
+        fetch('https://api.mcstatus.io/v2/status/java/play.pogcraft.net:25612')
+        .then(response => response.json())
+        .then(data => handleServerStatus(data));
+    
+        function handleServerStatus(data){
+            if(data.status=='error'){
+                console.log(data.error);
+                return false;
+            }
+
+            const serverStatus = document.getElementById("server-status");
+            if (data.online) {
+                serverStatus.innerHTML = "Online";
+            }   
+            else {
+                serverStatus.innerHTML = "Offline";
+            }
+            
+    
+            const motd = document.getElementById("player-max");
+            motd.innerHTML = data.players.max;
+    
+            const playerCounter = document.getElementById("player-count");
+            playerCounter.innerHTML = data.players.online;
+
+            const serverVersion = document.getElementById("server-version");
+            serverVersion.innerHTML = data.version.name_clean;
         } 
     }
     
