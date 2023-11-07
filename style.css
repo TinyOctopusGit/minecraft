@@ -26,7 +26,7 @@ h2 {
 }
 
 .serverStatus p{
-    font-size: larger;
+    font-size: x-large;
 }
 
 .button {
@@ -46,14 +46,12 @@ h2 {
 }
   
 .button:hover {
-    background-color: var(--aHover);
-    box-shadow: 0 8px #999;
+    box-shadow: 0 8px #a0736b;
     transform: translateY(-8px);
 }
   
 .button:active {
-    background-color: var(--aHover);
-    box-shadow: 0 4px #888;
+    box-shadow: 0 4px #764f48;
     transform: translateY(-4px);
 }
 
@@ -170,7 +168,7 @@ details {
     top: 0px;
     margin: 0px;
     margin-bottom: 5px;
-    box-shadow: 0px 1px 10px #9b9185;
+    box-shadow: 0px 1px 10px #a0736b;
 }
 
 .topnav a {
@@ -191,7 +189,7 @@ details {
     color: white;
     background-color: var(--accent);
     transform: translateY(-3px);
-    box-shadow: 0 3px #979797;
+    box-shadow: 0 3px #764f48;
 }
 
 .topnav a.active {

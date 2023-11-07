@@ -14,7 +14,7 @@
         <a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link"class="active">Upgrade</a>
         <a href="index.html">Home</a>
         <a href="server.html">Server Details</a>
-        <a href="http://144.217.49.130:8063/">Dynmap</a>
+        <a href="dynmap.html">Dynmap</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
@@ -37,19 +37,15 @@
         <h3>DataPacks</h3>
         <p>Player Shops</p>
         <p>Vanilla Tweaks</p>
-
-
     </div>
 
-    <h2>Server Hardware</h2>
-    <p>CPU: Ryzen 7 5800X @ 4.7GHz</p>
-    <p>Storage: Unmetered Enterprise Grade NVMe SSDs</p>
-    <p>RAM: DDR4 2666MHz Memory</p>
-    <i>Hosted by Pebblehost</i>
-
-    <p style="width: 80%; margin: aut o;">
-        
-    </p>
+    <div>
+        <h2>Server Hardware</h2>
+        <p>CPU: Ryzen 7 5800X @ 4.7GHz</p>
+        <p>Storage: Unmetered Enterprise Grade NVMe SSDs</p>
+        <p>RAM: DDR4 2666MHz Memory</p>
+        <i>Hosted by Pebblehost</i>
+    </div>        
     <div class="sliders">
         <label for="tempB"><h3>Current GB of RAM:</h3></label>
         <input type="range" id="gb" name="gb" list="values" step="1" min="0" max="8" class="slider" value="0"/>
@@ -197,7 +193,7 @@
 
 <script>
     function initServerData(serverIp,serverPort){    
-        fetch('https://api.mcstatus.io/v2/status/java/play.pogcraft.net:25612')
+        fetch('https://api.mcsrvstat.us/3/play.pogcraft.net:25612')
         .then(response => response.json())
         .then(data => handleServerStatus(data));
     
@@ -216,14 +212,14 @@
             }
             
     
-            const motd = document.getElementById("player-max");
-            motd.innerHTML = data.players.max;
+            const playerMax = document.getElementById("player-max");
+            playerMax.innerHTML = data.players.max;
     
             const playerCounter = document.getElementById("player-count");
             playerCounter.innerHTML = data.players.online;
 
             const serverVersion = document.getElementById("server-version");
-            serverVersion.innerHTML = data.version.name_clean;
+            serverVersion.innerHTML = data.version;
         } 
     }
     
