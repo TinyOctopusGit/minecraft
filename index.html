@@ -16,6 +16,7 @@
         <a href="index.html">Home</a>
         <a href="server.html">Server Details</a>
         <a href="dynmap.html">Dynmap</a>
+        <p class="mobile" ><span id="server-status"></span></i></p>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
@@ -52,6 +53,41 @@
     x.className = "topnav";
   }
 }
+</script>
+<script>
+  function initServerData(serverIp,serverPort){    
+      fetch('https://api.mcsrvstat.us/3/play.pogcraft.net:25612')
+      .then(response => response.json())
+      .then(data => handleServerStatus(data));
+  
+      function handleServerStatus(data){
+          if(data.status=='error'){
+              console.log(data.error);
+              return false;
+          }
+
+          const serverStatus = document.getElementById("server-status");
+          if (data.online) {
+              serverStatus.innerHTML = "Online";
+          }   
+          else {
+              serverStatus.innerHTML = "Offline";
+          }
+          
+  
+          const playerMax = document.getElementById("player-max");
+          playerMax.innerHTML = data.players.max;
+  
+          const playerCounter = document.getElementById("player-count");
+          playerCounter.innerHTML = data.players.online;
+
+          const serverVersion = document.getElementById("server-version");
+          serverVersion.innerHTML = data.version;
+      } 
+  }
+  
+  initServerData("play.pogcraft.net","25565");
+  
 </script>
 
 </html>
