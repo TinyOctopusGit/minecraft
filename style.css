@@ -206,11 +206,26 @@ details {
     display: none;
 }
 
+
+.mobile {
+    display:block;
+    position: fixed; 
+    right: 10px; 
+    font-weight: bold; 
+    color: var(--bg);
+    font-size: x-large;
+    top: -12px
+}
+
+
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
         float: right;
         display: block;
+    }
+    .mobile {
+        display: none;
     }
 }
 
