@@ -57,11 +57,15 @@ h2 {
 
 
 a:link, a:visited {
-    color: var(--bg);
-    background-color: transparent;
     text-decoration: none;
-    font-size: xx-large;
-    font-weight: bold;
+    color: black;
+    font-weight:500;
+    font-size: large;
+}
+
+a:hover {
+    text-decoration: underline;
+    transition: 10ms;
 }
 
 .sliders{
@@ -181,7 +185,7 @@ details {
     text-decoration: none;
     font-size: large;
     font-weight:1000;
-    border-radius: 1000px;
+    border-radius: 15px;
     transition: 200ms;
 }
 
@@ -249,17 +253,32 @@ details {
     padding: 5%;
     height: 300px; /* Should be removed. Only for demonstration */
   }
-  
+  .column3 {
+    float: left;
+    width: 31.3%;
+    /* padding: 1%; */
+    margin: 1%;
+    background-color: var(--orange);
+    border-radius: 20px;
+    flex: 1;
+}
+
   /* Clear floats after the columns */
   .row:after {
     content: "";
-    display: table;
     clear: both;
+    display: flex;
+  }
+  .row3 {
+    display: flex;
   }
   
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
-    .column {
-      width: 90%;
+    .column, .column3 {
+      width: 100%;
+    }
+    .row3{
+        display: table;
     }
   }
