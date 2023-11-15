@@ -1,6 +1,7 @@
 :root {
-    --bg: #fff9eb;
-    --orange: #ffb22c;
+    --bg: #fff6e2;
+    --orangeLight: #ffb22c2b;
+    --orange: #ffa200;
     --accent: #ff4800;
     --aHover: #FF6200;
 }
@@ -249,25 +250,31 @@ details {
 
 .column {
     float: left;
-    width: 40%;
-    padding: 5%;
-    height: 300px; /* Should be removed. Only for demonstration */
-  }
-  .column3 {
+    width: 48%;
+    margin: 1%;
+}
+.column3 {
     float: left;
     width: 31.3%;
-    /* padding: 1%; */
     margin: 1%;
-    background-color: var(--orange);
+    background-color: var(--orangeLight);
+    border: var(--orange) 5px solid;
     border-radius: 20px;
     flex: 1;
+}
+
+.column3 p{
+    margin: 1px;
+    color: black;
+    font-weight:500;
+    font-size: large;
 }
 
   /* Clear floats after the columns */
   .row:after {
     content: "";
     clear: both;
-    display: flex;
+    display: table;
   }
   .row3 {
     display: flex;
@@ -276,7 +283,8 @@ details {
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
     .column, .column3 {
-      width: 100%;
+      width: 94%;
+      margin: 2%;
     }
     .row3{
         display: table;
