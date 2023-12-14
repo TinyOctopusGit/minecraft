@@ -11,11 +11,11 @@
 
 <body>
     <div class="topnav" id="myTopnav">
-        <a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link"class="active">Upgrade</a>
         <a href="index.html">Home</a>
-        <a href="server.html">Server Details</a>
-        <a href="dynmap.html">Dynmap</a>
-        <p class="mobile" ><span id="server-status"></span></i></p>
+        <a href="server.html" class="active">Server Details</a>
+        <a href="mods.html">Mods</a>
+        <a href="blueMap.html">BlueMap</a>
+        <p class="mobile"><span id="server-status3"></span></p>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
@@ -24,18 +24,37 @@
     <br><br>
     
     <h1>Server Details</h1>
-
-    <div class="serverStatus">
-        <h2>Status</h2>       
-        <p> Server is: <span id="server-status" style="font-weight: bold;"></span></p>
-        <p> Players Online: <span id="player-count" style="font-weight: bold;">0</span>/<span id="player-max" style="font-weight: bold;">0</span></p>
-        <p> Server Version: <span id="server-version" style="font-weight: bold;">0</span></p>
+    <div class="row">
+        <div class="column">
+        <h2 class="underline">Main Server</h2>
+            <div class="serverStatus">
+                <p> Server is: <span id="server-status" style="font-weight: bold;">loading...</span></p>
+                <p> Players Online: <span id="player-count" style="font-weight: bold;">?</span>/<span id="player-max" style="font-weight: bold;">?</span></p>
+                <p> Server Version: <span id="server-version" style="font-weight: bold;">?</span></p>
+            </div>
+        </div>
+        <div class="column">
+        <h2 class="underline">Build Server</h2>
+            <div class="serverStatus">
+                <p> Server is: <span id="server-status2" style="font-weight: bold;">loading...</span></p>
+                <p> Players Online: <span id="player-count2" style="font-weight: bold;">?</span>/<span id="player-max" style="font-weight: bold;">?</span></p>
+                <p> Server Version: <span id="server-version2" style="font-weight: bold;">?</span></p>
+            </div>
+        </div>
+        <div style="font-size: x-large;">
+            <h2>Server Hardware</h2>
+            <p>CPU: i7-8700</p>
+            <p>Storage: 32gb per server</p>
+            <p>RAM: 16gb per server</p>
+        </div> 
     </div>
 
-    <h2 style="margin-bottom: 0px;">Mods and Datapacks</h2>
-    <div class="row3">
-        <div class="column3" style="color: black;">
-          <h3>Server-side Mods</h3>
+         
+
+    <h2 style="margin-bottom: 0px;">Server-side Mods and Datapacks</h2>
+    <div class="row">
+        <div class="column" style="color: black;">
+          <h3 class="underline"><span>Server Side Mods</span></h3>
           <a href="https://modrinth.com/mod/fabric-api">Fabric API</a><br>
           <a href="https://modrinth.com/mod/lithium">Lithium</a><br>
           <a href="https://modrinth.com/plugin/chunky">Chunky</a><br>
@@ -46,25 +65,9 @@
           <a href="https://modrinth.com/plugin/simple-voice-chat">voicechat</a><br>
 
         </div>
-        <div class="column3">
-            <h3>Recommended Client-side Mods</h3>
-            <p style="font-size: large; text-decoration: underline; margin: 0px;">Performance</p>
-            <a target=”_blank” href="https://modrinth.com/mod/sodium">Sodium</a><br>
-            <a target=”_blank” href="https://modrinth.com/mod/lithium">Lithium</a><br>
-            <a target=”_blank” href="https://modrinth.com/mod/phosphor">Phosphor</a><br>
-            <a target=”_blank” href="https://modrinth.com/mod/iris">Iris</a><br>
-            <p style="font-size: large; margin: 0px;">OR</p>
-            <a target=”_blank” href="https://optifine.net">Optifine</a><br>
-            <a target=”_blank” href="https://www.curseforge.com/minecraft/mc-mods/optifabric">Optifabric</a><br>
-            <p style="font-size: large; text-decoration: underline; margin: 0px;">Other</p>
-            <a target=”_blank” href="https://modrinth.com/plugin/simple-voice-chat">Voice Chat</a><br>
-            <a target=”_blank” href="https://modrinth.com/mod/xaeros-minimap">Mini Map</a><br>
-            <a target=”_blank” href="https://modrinth.com/mod/modmenu?fromcf">Mod Menu</a><br>
-            <p style="margin: 5px;">Please note that many of these mods have Dependents that are required for them to run. Other mods not on the list are permitted. Mods that give the player an unfair advantage are not allowed. Please ask if you are unsure about your mods.</p>
-            
-        </div>
-        <div class="column3">
-            <h3>DataPacks</h3>
+        
+        <div class="column">
+            <h3 class="underline"><span>Plugins/Datapacks</span></h3>
             <p>afk display v1.1.5</p>
             <p>armor statues v2.8.7</p>	
             <p>count mob deaths v1.1.5</p>	
@@ -80,109 +83,11 @@
             <p>track statistics v1.1.6</p>
         </div>
     </div>
-
-    <div>
-        <h2>Server Hardware</h2>
-        <p>CPU: Ryzen 7 5800X @ 4.7GHz</p>
-        <p>Storage: Unmetered Enterprise Grade NVMe SSDs</p>
-        <p>RAM: DDR4 2666MHz Memory</p>
-        <i>Hosted by Pebblehost</i>
-    </div>        
-    <div class="sliders">
-        <label for="tempB"><h3>Current GB of RAM:</h3></label>
-        <input type="range" id="gb" name="gb" list="values" step="1" min="0" max="8" class="slider" value="0"/>
-        
-        <datalist id="values">
-        <option value="0" label="3" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="1" label="4" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="2" label="5" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="3" label="6" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="4" label="7" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="5" label="8" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="6" label="10" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="7" label="12" style="-webkit-transform: rotate(-90deg);"></option>
-        <option value="8" label="16" style="-webkit-transform: rotate(-90deg);"></option>
-        </datalist>
-        <p>Cost of Upgrade: $<span id="gbPrice"></span></p>
-        <h3><p>Current CPU Threads: <span id="threads"></span></p></h3>
-
-        <button class="button" onclick="reset()" style="font-size: medium;">Reset to Current</button>
-
-        <br><br>
-
-        <details>
-            <summary>
-                About Pricing
-              <span class="icon">?</span>
-            </summary>
-            <p>
-                The slider above doubles as a display for the current amount of RAM and threads that the server has along with a price calculator. Additional threads can be purchased for about $5 but the price is dependant on the amount of RAM. Also for every 2 GB of RAM an extra thread is added for free which is why there isn't an option to calculate the extra thread cost since threads are added with the RAM.
-            </p>
-          </details>
-    </div>
-
     <br><br><br><br><br><br><br><br><br><br><br><br>
 
 </body>
 
-<script>
-    var currentGB = 0;
-    var slider = document.getElementById("gb");
-    var output = document.getElementById("gbPrice");
-    var output2 = document.getElementById("threads");
-    var sliderVal;
 
-    output.innerHTML = currentGB;
-    output2.innerHTML = 1;
-
-    slider.oninput = function() {
-    if (slider.value > 5) {
-        if (slider.value == 6) {
-            sliderVal = 7;
-        }
-        if (slider.value == 7) {
-            sliderVal = 9;
-        }
-        if (slider.value == 8) {
-            sliderVal = 13;
-        }
-    } else {
-        sliderVal = slider.value;
-    }
-    if (slider.value == 0) {
-        output2.innerHTML = 1;
-    }
-    if (slider.value == 1 || slider.value == 2) {
-        output2.innerHTML = 2;
-    }
-    if (slider.value == 3 || slider.value == 4) {
-        output2.innerHTML = 3;
-    }
-    if (slider.value == 5 || slider.value == 6) {
-        output2.innerHTML = 4;
-    }
-    if (slider.value == 7 || slider.value == 8) {
-        output2.innerHTML = 5;
-    }
-
-    output.innerHTML = ((sliderVal - currentGB)*2.25);
-    }
-
-    function reset() {
-        document.getElementById('gb').value = currentGB;
-        output.innerHTML = 0;
-        output2.innerHTML = 1;
-    }
-
-    function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
 <!-- <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
 <script>
     MinecraftAPI.getServerStatus('play.pogcraft.net', {
@@ -252,7 +157,13 @@
             else {
                 serverStatus.innerHTML = "Offline";
             }
-            
+            const serverStatus2 = document.getElementById("server-status3");
+            if (data.online) {
+                serverStatus2.innerHTML = "Online";
+            }   
+            else {
+                serverStatus2.innerHTML = "Offline";
+            }
     
             const playerMax = document.getElementById("player-max");
             playerMax.innerHTML = data.players.max;
@@ -266,6 +177,50 @@
     }
     
     initServerData("play.pogcraft.net","25565");
+    
+</script>
+<script>
+    function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<script>
+    function initServerData2(serverIp,serverPort){    
+        fetch('https://api.mcsrvstat.us/3/209.222. 115.45:25612')
+        .then(response => response.json())
+        .then(data => handleServerStatus(data));
+    
+        function handleServerStatus(data){
+            if(data.status=='error'){
+                console.log(data.error);
+                return false;
+            }
+
+            const serverStatus2 = document.getElementById("server-status2");
+            if (data.online) {
+                serverStatus2.innerHTML = "Online";
+            }   
+            else {
+                serverStatus2.innerHTML = "Offline";
+            }
+    
+            const playerMax2 = document.getElementById("player-max2");
+            playerMax2.innerHTML = data.players.max;
+    
+            const playerCounter2 = document.getElementById("player-count2");
+            playerCounter2.innerHTML = data.players.online;
+
+            const serverVersion2 = document.getElementById("server-version2");
+            serverVersion2.innerHTML = data.version;
+        } 
+    }
+    
+    initServerData2("create.pogcraft.net","25565");
     
 </script>
 
