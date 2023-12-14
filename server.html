@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Details</title>
+    <link rel="icon" type="image/x-icon" href="Minecraft_Logo_Test_2_2.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="server.html" class="active">Server Details</a>
+        <a href="mods.html">Mods</a>
+        <a href="blueMap.html">BlueMap</a>
+        <p class="mobile"><span id="server-status3"></span></p>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    <br><br>
+    <br><br>
+    
+    <h1>Server Details</h1>
+    <div class="row">
+        <div class="column">
+        <h2 class="underline">Main Server</h2>
+            <div class="serverStatus">
+                <p> Server is: <span id="server-status" style="font-weight: bold;">loading...</span></p>
+                <p> Players Online: <span id="player-count" style="font-weight: bold;">?</span>/<span id="player-max" style="font-weight: bold;">?</span></p>
+                <p> Server Version: <span id="server-version" style="font-weight: bold;">?</span></p>
+            </div>
+        </div>
+        <div class="column">
+        <h2 class="underline">Build Server</h2>
+            <div class="serverStatus">
+                <p> Server is: <span id="server-status2" style="font-weight: bold;">loading...</span></p>
+                <p> Players Online: <span id="player-count2" style="font-weight: bold;">?</span>/<span id="player-max" style="font-weight: bold;">?</span></p>
+                <p> Server Version: <span id="server-version2" style="font-weight: bold;">?</span></p>
+            </div>
+        </div>
+        <div style="font-size: x-large;">
+            <h2>Server Hardware</h2>
+            <p>CPU: i7-8700</p>
+            <p>Storage: 32gb per server</p>
+            <p>RAM: 16gb per server</p>
+        </div> 
+    </div>
+
+         
+
+    <h2 style="margin-bottom: 0px;">Server-side Mods and Datapacks</h2>
+    <div class="row">
+        <div class="column" style="color: black;">
+          <h3 class="underline"><span>Server Side Mods</span></h3>
+          <a href="https://modrinth.com/mod/fabric-api">Fabric API</a><br>
+          <a href="https://modrinth.com/mod/lithium">Lithium</a><br>
+          <a href="https://modrinth.com/plugin/chunky">Chunky</a><br>
+          <a href="https://modrinth.com/plugin/ChunkyBorder">ChunkyBorder</a><br>
+          <a href="https://modrinth.com/plugin/dynmap/version/v3.5-fabric-1.19">Dynmap</a><br>
+          <a href="https://modrinth.com/plugin/dcintegration/version/2.4.7-1.19.2">Dcintegration</a><br>
+          <a href="https://modrinth.com/mod/servux">Servux</a><br>
+          <a href="https://modrinth.com/plugin/simple-voice-chat">voicechat</a><br>
+
+        </div>
+        
+        <div class="column">
+            <h3 class="underline"><span>Plugins/Datapacks</span></h3>
+            <p>afk display v1.1.5</p>
+            <p>armor statues v2.8.7</p>	
+            <p>count mob deaths v1.1.5</p>	
+            <p>fast leaf decay v2.0.8</p>	
+            <p>graves v2.8.9</p>	
+            <p>item averages v1.3.6</p>
+            <p>kill empty boats v1.1.6</p>	
+            <p>more mob heads v2.12.2</p>
+            <p>name formatting station v2.2</p>	
+            <p>real time clock v1.1.5</p>
+            <p>silence mobs v1.2.0</p>
+            <p>track raw statistics v1.7.1</p>	
+            <p>track statistics v1.1.6</p>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+
+
+<!-- <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
+<script>
+    MinecraftAPI.getServerStatus('play.pogcraft.net', {
+        port: 25565 // optional, only if you need a custom port
+    }, function (err, status) {
+        if (err) {
+            return document.querySelector('.server-status').innerHTML = 'Error loading status';
+        }
+
+        // you can change these to your own message!
+        document.querySelector('.server-online').innerHTML = status.online ? 'Online' : 'Offline';
+    });
+</script> -->
+
+<!-- <script>
+    function initServerData(serverIp,serverPort){    
+        fetch('https://mcapi.us/server/status?ip='+serverIp+'&port='+serverPort)
+        .then(response => response.json())
+        .then(data => handleServerStatus(data));
+    
+        function handleServerStatus(data){
+            if(data.status=='error'){
+                console.log(data.error);
+                return false;
+            }
+
+            const serverStatus = document.getElementById("server-status");
+            if (data.online) {
+                serverStatus.innerHTML = "Online";
+            }   
+            else {
+                serverStatus.innerHTML = "Offline";
+            }
+            
+    
+            const motd = document.getElementById("player-max");
+            motd.innerHTML = data.players.max;
+    
+            const playerCounter = document.getElementById("player-count");
+            playerCounter.innerHTML = data.players.now;
+
+            const serverName = document.getElementById("server-name");
+            serverName.innerHTML = data.server.name;
+        } 
+    }
+    
+    initServerData("play.pogcraft.net","25565");
+    
+</script> -->
+
+<script>
+    function initServerData(serverIp,serverPort){    
+        fetch('https://api.mcsrvstat.us/3/play.pogcraft.net:25612')
+        .then(response => response.json())
+        .then(data => handleServerStatus(data));
+    
+        function handleServerStatus(data){
+            if(data.status=='error'){
+                console.log(data.error);
+                return false;
+            }
+
+            const serverStatus = document.getElementById("server-status");
+            if (data.online) {
+                serverStatus.innerHTML = "Online";
+            }   
+            else {
+                serverStatus.innerHTML = "Offline";
+            }
+            const serverStatus2 = document.getElementById("server-status3");
+            if (data.online) {
+                serverStatus2.innerHTML = "Online";
+            }   
+            else {
+                serverStatus2.innerHTML = "Offline";
+            }
+    
+            const playerMax = document.getElementById("player-max");
+            playerMax.innerHTML = data.players.max;
+    
+            const playerCounter = document.getElementById("player-count");
+            playerCounter.innerHTML = data.players.online;
+
+            const serverVersion = document.getElementById("server-version");
+            serverVersion.innerHTML = data.version;
+        } 
+    }
+    
+    initServerData("play.pogcraft.net","25565");
+    
+</script>
+<script>
+    function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<script>
+    function initServerData2(serverIp,serverPort){    
+        fetch('https://api.mcsrvstat.us/3/209.222. 115.45:25612')
+        .then(response => response.json())
+        .then(data => handleServerStatus(data));
+    
+        function handleServerStatus(data){
+            if(data.status=='error'){
+                console.log(data.error);
+                return false;
+            }
+
+            const serverStatus2 = document.getElementById("server-status2");
+            if (data.online) {
+                serverStatus2.innerHTML = "Online";
+            }   
+            else {
+                serverStatus2.innerHTML = "Offline";
+            }
+    
+            const playerMax2 = document.getElementById("player-max2");
+            playerMax2.innerHTML = data.players.max;
+    
+            const playerCounter2 = document.getElementById("player-count2");
+            playerCounter2.innerHTML = data.players.online;
+
+            const serverVersion2 = document.getElementById("server-version2");
+            serverVersion2.innerHTML = data.version;
+        } 
+    }
+    
+    initServerData2("create.pogcraft.net","25565");
+    
+</script>
+
+</html>
