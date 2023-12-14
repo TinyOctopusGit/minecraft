@@ -12,11 +12,11 @@
 
 <body>
     <div class="topnav" id="myTopnav">
-        <a href="https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link"class="active">Upgrade</a>
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="server.html">Server Details</a>
-        <a href="dynmap.html">Dynmap</a>
-        <p class="mobile" ><span id="server-status"></span></i></p>
+        <a href="mods.html">Mods</a>
+        <a href="blueMap.html">BlueMap</a>
+        <p class="mobile" ><span id="server-status"></span></p>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
@@ -25,18 +25,30 @@
     <br>
     <br>
 
+  
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      <strong>Admin Message:</strong> The server is being migrated to being locally hosted, some things on this website may not work or be out of date as well as servers being down more.
+    </div>
+
     <img src="Minecraft_Logo_Test_2_2.png" style="width: 50%;" alt="PogCraft">
 
-    <h3>Experiencing Lag? Upgrade the server.</h3>
-    <button class="button" style="font-family: nunito;" onclick='window.open("https://patreon.com/MinecraftServerUpgrade?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link")'>Upgrade</button>
     <div class="row">
-        <div class="column">
+        <div class="column3">
           <h2>About the Server</h2>
-          <p>This server is player funded! The goal is to have this server run indefinitely which is why there is a free base server of 3gb or ram and 1 thread. If players experience lag then the idea would be for them to upgrade the server when they feel it necessary.</p>
+          <p>More information about server hardware, software, and status</p><br>
+          <button class="button" style="font-family: nunito; font-size: x-large;" onclick="location.href='server.html';">Server Info</button>
         </div>
-        <div class="column">
-          <h2>Need Help?</h2>
-          <p>Ask any questions you have in the discord.</p>
+        <div class="column3">
+          <h2>World Map</h2>
+          <p>View the world map in 3D.</p>
+          <br><br>
+          <button class="button" style="font-family: nunito; font-size: x-large;" onclick="location.href='blueMap.html';">BlueMap</button>
+        </div>
+        <div class="column3">
+          <h2>Mods</h2>
+          <p>Install mods to improve your performance and gameplay.</p><br>
+          <button class="button" style="font-family: nunito; font-size: x-large;" onclick="location.href='mods.html';">Mods</button>
         </div>
     </div>
 
