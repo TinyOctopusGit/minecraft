@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Details</title>
+  <link rel="icon" type="image/x-icon" href="Minecraft_Logo_Test_2_2.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="server.html">Server Details</a>
+    <a href="mods.html" class="active">Mods</a>
+    <a href="http://map.pogcraft.net:45896" target="_blank">BlueMap</a>
+    <p class="mobile"><span id="server-status"></span></p>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+<div class="content">    
+
+  <br><br><br><br>
+    
+  <h1>Mods</h1>
+  <h2>Modpacks for optimal game play</h2>
+  <h3>All modpacks will be for Fabric</h3>
+
+  <h2>Default Launcher</h2>
+  <p>For the default Minecraft Launcher you need to install <a target=”_blank” href="https://fabricmc.net/" style="text-decoration: underline;">Fabric</a></p>
+  <div class="row3">
+    <div class="column3">
+      <h3 class="underline"><span>Basic</span></h3>
+      <p>The minimal mods to get the optimal performance and best experience.</p>
+      <a href="basic.zip" download="basic.zip"><button onclick="downloads()"><i class="fa fa-download"></i> Download Basic</button></a>
+    </div>
+    <div class="column3">
+        <h3 class="underline"><span>Builder Mods</span></h3>
+        <p>Mods that make building easier and faster with mods like Worldedit and Axiom.</p>
+        <a href="builder.zip" download="builder.zip"><button onclick="downloads()"><i class="fa fa-download"></i> Download Builder</button></a>
+    </div>
+    <div class="column3">
+        <h3 class="underline"><span>Technical Mods</span></h3>
+        <p>Mods that make redstone and farms a little easier as well as a few other helpful features.</p>
+        <a href="technical.zip" download="technical.zip"><button onclick="downloads()"><i class="fa fa-download"></i> Download Technical</button></a>
+    </div>
+    <div class="column3">
+        <h3 class="underline"><span>All Mods</span></h3>
+        <p>Includes all mods from builder and technical mod pack as well as the basic pack.</p>
+        <a href="all.zip" download="all.zip"><button onclick="downloads()"><i class="fa fa-download"></i> Download All</button></a>
+    </div>
+  </div>
+
+  <h2>Alternative Launchers</h2>
+  <p>I highly recommend using an alternative launcher such as 
+    <a target=”_blank” href="https://multimc.org/#Download" style="text-decoration: underline;">MultiMC</a> or 
+    <a target=”_blank” href="https://modrinth.com/app" style="text-decoration: underline;">Modrinth App</a> 
+    as they allows for easier mod installs and has more features than the default launcher.</p>
+  <p>All modpacks are available on Modrinth for easiest install and work for most alternative launchers</p>
+  
+  <a target=”_blank” href="https://modrinth.com/modpacks/pogcraft" style="text-decoration: underline;"><button style="outline: solid 3px #1bd96a; color:#1bd96a; background-color: transparent;padding: 10px;font-size: xx-large; border-radius: 15px;">Modrinth</button></a> 
+  <br><br>
+  <a target=”_blank” href="downloads.html" style="text-decoration: underline;"><button style="margin: 10px;">Install Instructions</button></a> 
+  
+  <p>Other mods are allowed so long as they do not give the player an unfair advantage over others such as hack clients and Baritone.</p>
+</div>
+  <footer>
+    <div class="container space-around">
+      <img src="Minecraft_Logo_Test_2_2.png" style="width: 8%;" alt="PogCraft">
+      <a href="index.html">Home</a>
+      <a href="server.html">Server</a>
+      <a href="mods.html">Mods</a>
+      <a href="blueMap.html">BlueMap</a>
+    </div>    
+  </footer>
+  <script src="navbar.js"></script>
+
+</body>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("install");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("install");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+        <script>
+            // Get the modal
+            var modal2 = document.getElementById("myModal2");
+            
+            // Get the button that opens the modal
+            var btn2 = document.getElementById("install2");
+            
+            // Get the <span> element that closes the modal
+            var span2 = document.getElementsByClassName("close2")[0];
+            
+            // When the user clicks the button, open the modal 
+            btn2.onclick = function() {
+              modal2.style.display = "block";
+            }
+            
+            // When the user clicks on <span> (x), close the modal
+            span2.onclick = function() {
+              modal2.style.display = "none";
+            }
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal2) {
+                modal2.style.display = "none";
+              }
+            }
+            </script>
+  <script>
+    function downloads() {
+      window.open("downloads.html", "_blank").focus();
+    }
+  </script>
+
+</html>

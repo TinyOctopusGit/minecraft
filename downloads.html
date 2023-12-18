@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Details</title>
+    <link rel="icon" type="image/x-icon" href="Minecraft_Logo_Test_2_2.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="server.html">Server Details</a>
+        <a href="mods.html">Mods</a>
+        <a href="http://map.pogcraft.net:45896" target="_blank">BlueMap</a>
+        <p class="mobile"><span id="server-status"></span></p>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    <br><br>
+    <br><br>
+    
+<div class="content">    
+    <h1>Download Started...</h1>
+    <p>Please follow the install instructions below to ensure proper installation</p>
+    <h2>Install Instructions</h2>
+    <button id="install" style="margin: 10px;">Minecraft Launcher</button>
+    <button id="install2"  style="margin: 10px;">Alternative Launcher</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Minecraft Launcher Mod Install</h2>
+            </div>
+            <div class="modal-body">
+                <p>This is for installing mods after Fabric has been installed and launched.</p>
+                <a target=”_blank” href="https://fabricmc.net/wiki/install" style="text-decoration: underline;">Fabric Install Instructions.</a>
+                <br>
+                <p>1. Open FileExplorer and type in <span style="background-color: rgb(145, 145, 145);">%appdata%</span></p>
+                <p>2. Open the <span style="background-color: rgb(145, 145, 145);">.minecraft</span> folder</p>
+                <p>3. Find and open the mods folder. If there is no mod folder launch the Fabric version again and then close it and refresh FileExplorer.</p>
+                <p>4. Extract the downloaded mod zip into the mods folder.</p>
+                <p>5. Relaunch Minecraft and the mods now should be installed.</p>
+            </div>
+            <div class="modal-footer">
+                <p>If you are having issues installing ask for help in the discord.</p>
+            </div>
+        </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close2">&times;</span>
+                <h2>Alternative Launcher Install</h2>
+            </div>
+            <div class="modal-body">
+                <h2>Modrinth has very thorough install instructions for most alternative launchers</h2>
+                <a target=”_blank” href="https://docs.modrinth.com/modpacks/play" style="text-decoration: underline;"><button style="outline: solid 3px #1bd96a; color:#1bd96a; background-color: transparent;padding: 10px;font-size: xx-large; border-radius: 15px;">Modrinth Install Instructions</button></a> 
+                <br><br>
+            </div>
+            <div class="modal-footer">
+                <p>If you are having issues installing ask for help in the discord.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+    
+    <footer>
+      <div class="container space-around">
+        <img src="Minecraft_Logo_Test_2_2.png" style="width: 8%;" alt="PogCraft">
+        <a href="index.html">Home</a>
+        <a href="server.html">Server</a>
+        <a href="mods.html">Mods</a>
+        <a href="blueMap.html">BlueMap</a>
+      </div>    
+    </footer>
+    <script src="navbar.js"></script>
+
+</body>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("install");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("install");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+        <script>
+            // Get the modal
+            var modal2 = document.getElementById("myModal2");
+            
+            // Get the button that opens the modal
+            var btn2 = document.getElementById("install2");
+            
+            // Get the <span> element that closes the modal
+            var span2 = document.getElementsByClassName("close2")[0];
+            
+            // When the user clicks the button, open the modal 
+            btn2.onclick = function() {
+              modal2.style.display = "block";
+            }
+            
+            // When the user clicks on <span> (x), close the modal
+            span2.onclick = function() {
+              modal2.style.display = "none";
+            }
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal2) {
+                modal2.style.display = "none";
+              }
+            }
+            </script>
+
+</html>
